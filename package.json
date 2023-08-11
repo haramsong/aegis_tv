@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.5",
+    "@vue/eslint-config-prettier": "^8.0.0",
     "quasar": "^2.12.3"
   }
 }
