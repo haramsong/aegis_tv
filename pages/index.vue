@@ -6,8 +6,6 @@
           <ViewTabList />
         </q-page>
       </q-page-container>
-      <CommonSideNav />
-      <CommonFloatingButton></CommonFloatingButton>
     </q-page>
   </q-page-container>
 </template>

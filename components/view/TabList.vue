@@ -8,7 +8,8 @@
   >
     <div class="text-h4 text-weight-bolder text-grey-9 q-mb-md">입주자</div>
     <div class="bg-red-14 line"></div>
-    <ListItem></ListItem>
+    <ListItem :ref="currentTab"></ListItem>
+    <CommonFloatingButton :type="currentTab"></CommonFloatingButton>
   </q-scroll-area>
 </template>
 
@@ -28,6 +29,7 @@ const barStyle = {
   width: '9px',
   opacity: 0.2,
 };
+const currentTab = ref('residents');
 </script>
 
 <style scoped>

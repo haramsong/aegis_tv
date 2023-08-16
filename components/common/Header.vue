@@ -75,16 +75,8 @@
   </q-header>
 </template>
 
-<script>
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    return {
-      search: ref(''),
-    };
-  },
-};
+<script setup>
+const search = ref('');
 </script>
 
 <style lang="sass" scoped>

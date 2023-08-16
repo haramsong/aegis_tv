@@ -1,6 +1,5 @@
 <template>
   <q-page-container class="GPL__page-container">
-    <router-view />
     <q-page-sticky position="left">
       <div class="fit q-py-lg q-px-md column">
         <q-btn
@@ -11,6 +10,7 @@
           no-caps
           size="24px"
           class="GPL__side-btn"
+          @click.prevent="getListItem"
         >
           <q-icon size="24px" name="photo" />
           <div class="GPL__side-btn__label">입주자</div>
@@ -106,18 +106,7 @@
   </q-page-container>
 </template>
 
-<script>
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    return {
-      tab: ref('mails'),
-      splitterModel: ref(20),
-    };
-  },
-};
-</script>
+<script setup></script>
 
 <style lang="sass">
 .GPL

@@ -3,6 +3,7 @@
     <div>
       <CommonHeader />
       <slot />
+      <CommonSideNav />
       <CommonFooter />
     </div>
   </q-layout>
