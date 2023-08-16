@@ -7,6 +7,7 @@
         </q-page>
       </q-page-container>
       <CommonSideNav />
+      <CommonFloatingButton></CommonFloatingButton>
     </q-page>
   </q-page-container>
 </template>
@@ -15,4 +16,10 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.btn {
+  top: 300px;
+  left: 700px;
+  width: 60px;
+}
+</style>

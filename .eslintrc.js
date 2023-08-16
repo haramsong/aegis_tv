@@ -5,6 +5,10 @@ module.exports = {
     browser: true,
     node: true,
   },
+  //script setup에서 async없이 await써도 eslint error 안생김.
+  parserOptions: {
+    ecmaVersion: 'latest',
+  },
   extends: [
     'eslint:recommended',
     'plugin:nuxt/recommended',

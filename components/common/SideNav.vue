@@ -2,47 +2,47 @@
   <q-page-container class="GPL__page-container">
     <router-view />
     <q-page-sticky position="left">
-      <div class="fit q-py-lg q-px-sm column">
+      <div class="fit q-py-lg q-px-md column">
         <q-btn
           round
           flat
-          color="grey-8"
+          color="grey-9"
           stack
           no-caps
-          size="26px"
+          size="24px"
           class="GPL__side-btn"
         >
-          <q-icon size="22px" name="photo" />
-          <div class="GPL__side-btn__label">Photos</div>
+          <q-icon size="24px" name="photo" />
+          <div class="GPL__side-btn__label">입주자</div>
         </q-btn>
 
         <q-btn
           round
           flat
-          color="grey-8"
+          color="grey-9"
           stack
           no-caps
-          size="26px"
+          size="24px"
           class="GPL__side-btn"
         >
-          <q-icon size="22px" name="collections_bookmark" />
-          <div class="GPL__side-btn__label">Albums</div>
+          <q-icon size="24px" name="collections_bookmark" />
+          <div class="GPL__side-btn__label">검침</div>
         </q-btn>
 
         <q-btn
           round
           flat
-          color="grey-8"
+          color="grey-9"
           stack
           no-caps
-          size="26px"
+          size="24px"
           class="GPL__side-btn"
         >
-          <q-icon size="22px" name="assistant" />
-          <div class="GPL__side-btn__label">Assistant</div>
+          <q-icon size="24px" name="assistant" />
+          <div class="GPL__side-btn__label">부과</div>
           <q-badge
             floating
-            color="red"
+            color="red-14"
             text-color="white"
             style="top: 8px; right: 16px"
           >
@@ -53,53 +53,53 @@
         <q-btn
           round
           flat
-          color="grey-8"
+          color="grey-9"
           stack
           no-caps
-          size="26px"
+          size="24px"
           class="GPL__side-btn"
         >
-          <q-icon size="22px" name="group" />
-          <div class="GPL__side-btn__label">Sharing</div>
+          <q-icon size="24px" name="group" />
+          <div class="GPL__side-btn__label">수납</div>
         </q-btn>
 
         <q-btn
           round
           flat
-          color="grey-8"
+          color="grey-9"
           stack
           no-caps
-          size="26px"
+          size="24px"
           class="GPL__side-btn"
         >
-          <q-icon size="22px" name="import_contacts" />
-          <div class="GPL__side-btn__label">Photo books</div>
+          <q-icon size="24px" name="import_contacts" />
+          <div class="GPL__side-btn__label">회계</div>
         </q-btn>
 
         <q-btn
           round
           flat
-          color="grey-8"
+          color="grey-9"
           stack
           no-caps
-          size="26px"
+          size="24px"
           class="GPL__side-btn"
         >
-          <q-icon size="22px" name="check_circle" />
-          <div class="GPL__side-btn__label">Check</div>
+          <q-icon size="24px" name="check_circle" />
+          <div class="GPL__side-btn__label">인사급여</div>
         </q-btn>
 
         <q-btn
           round
           flat
-          color="grey-8"
+          color="grey-9"
           stack
           no-caps
-          size="26px"
+          size="24px"
           class="GPL__side-btn"
         >
-          <q-icon size="22px" name="login" />
-          <div class="GPL__side-btn__label">Login</div>
+          <q-icon size="24px" name="login" />
+          <div class="GPL__side-btn__label">기타</div>
         </q-btn>
       </div>
     </q-page-sticky>
@@ -149,10 +149,10 @@ export default {
 
   &__side-btn
     &__label
-      font-size: 12px
-      line-height: 24px
+      font-size: 15px
+      line-height: 30px
       letter-spacing: .01785714em
-      font-weight: 500
+      font-weight: 600
 
   @media (min-width: 1024px)
     &__page-container

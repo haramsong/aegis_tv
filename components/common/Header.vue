@@ -1,5 +1,5 @@
 <template>
-  <q-header elevated class="bg-white text-grey-8" height-hint="64">
+  <q-header elevated glossy class="bg-grey-10 text-grey-8" height-hint="64">
     <q-toolbar class="GPL__toolbar" style="height: 64px">
       <!-- 상단 버튼 -->
       <!-- <q-btn
@@ -13,17 +13,22 @@
       /> -->
 
       <q-toolbar-title shrink class="row items-center no-wrap">
-        <span class="q-ml-sm">AegisTV</span>
+        <span class="q-ml-sm">
+          <nuxt-link class="text-weight-bolder text-h5 text-white" to="/"
+            >AegisTV</nuxt-link
+          >
+        </span>
       </q-toolbar-title>
 
       <q-space />
 
       <q-input
-        v-if="$q.screen.gt.sm"
+        v-if="$q.screen.gt.xs"
         v-model="search"
         class="GPL__toolbar-input"
+        dark
         dense
-        standout="bg-primary"
+        standout
         placeholder="Search"
       >
         <template #prepend>
@@ -52,10 +57,10 @@
       <q-space />
 
       <div class="q-gutter-sm row items-center no-wrap">
-        <q-btn round dense flat color="text-grey-7" icon="apps">
+        <q-btn round dense flat color="white" icon="apps">
           <q-tooltip>설정</q-tooltip>
         </q-btn>
-        <q-btn round dense flat color="grey-8" icon="notifications">
+        <q-btn round dense flat color="white" icon="notifications">
           <!-- <q-badge color="red" text-color="white" floating> 2 </q-badge> -->
           <q-tooltip>알림</q-tooltip>
         </q-btn>
@@ -71,7 +76,15 @@
 </template>
 
 <script>
-export default {};
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    return {
+      search: ref(''),
+    };
+  },
+};
 </script>
 
 <style lang="sass" scoped>
