@@ -14,9 +14,9 @@
     <CommonFloatingButton :id-cnt="data.length" :type="type" />
   </q-scroll-area>
   <CommonSideNav
-    @getData="handleData"
-    @getTitle="handleTitle"
-    @getType="handleType"
+    @get-data="handleData"
+    @get-title="handleTitle"
+    @get-type="handleType"
   />
 </template>
 
