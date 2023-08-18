@@ -1,14 +1,17 @@
 <template>
   <div class="q-pa-md">
     <q-card
-      v-for="item in props.data"
+      v-for="item in props.data.slice().reverse()"
       :key="item.id"
       class="q-ma-lg q-pa-md my-card"
     >
       <q-video :src="`https://www.youtube.com/embed/${item.root}`" />
       <nuxt-link
         style="text-decoration: none; color: inherit"
-        :to="`/details/${item.id}`"
+        :to="{
+          path: `/details/${props.type}`,
+          query: { id: item.id },
+        }"
       >
         <q-card-section>
           <div class="text-h6">{{ item.title }}</div>
@@ -31,7 +34,11 @@ const listData = ref([]);
 
 const props = defineProps({
   data: {
-    type: Array,
+    type: Object,
+    required: true,
+  },
+  type: {
+    type: String,
     required: true,
   },
 });

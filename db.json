@@ -23,33 +23,10 @@
       "createdBy": "관리자",
       "cnt": 154,
       "root": "x9duNSKqxlM"
-    },
-    {
-      "id": 4,
-      "title": "XPERP 어플 사용 방법",
-      "createdAt": "2023-07-06",
-      "createdBy": "관리자",
-      "cnt": 112,
-      "root": "keUfL_-roLo"
-    },
-    {
-      "id": 5,
-      "title": "1234",
-      "createdAt": "2023-08-18",
-      "createdBy": "관리자",
-      "cnt": 0,
-      "root": "1234"
     }
   ],
   "inspects": [
-    {
-      "id": 1,
-      "title": "1234",
-      "createdAt": "2023-08-18",
-      "createdBy": "관리자",
-      "cnt": 0,
-      "root": "1234"
-    }
+   
   ],
   "payments": [],
   "storages": [],

@@ -7,7 +7,7 @@
       </q-toolbar>
       <q-space />
       <q-toolbar class="text-grey-9 footer">
-        <div class="div-font">
+        <div v-if="$q.screen.gt.xs" class="div-font">
           <div>
             08506 서울특별시 금천구 가산디지털2로 98 2동 714호
             이지스엔터프라이즈(주)
@@ -29,9 +29,7 @@
   </q-footer>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup></script>
 
 <style scoped>
 .footer {

@@ -10,14 +10,11 @@
   </q-page-container>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { useQuasar } from 'quasar';
+const $q = useQuasar();
+
+$q.screen.setSizes({ sm: 400, md: 550, lg: 1000, xl: 2000 });
 </script>
 
-<style>
-.btn {
-  top: 300px;
-  left: 700px;
-  width: 60px;
-}
-</style>
+<style></style>

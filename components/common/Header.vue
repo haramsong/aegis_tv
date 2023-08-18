@@ -23,7 +23,7 @@
       <q-space />
 
       <q-input
-        v-if="$q.screen.gt.xs"
+        v-if="$q.screen.gt.sm"
         v-model="search"
         class="GPL__toolbar-input"
         dark

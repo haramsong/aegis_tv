@@ -10,7 +10,7 @@
       {{ title }}
     </div>
     <div class="bg-red-14 line"></div>
-    <ListItem :data="data" />
+    <ListItem :type="type" :data="data" />
     <CommonFloatingButton :id-cnt="data.length" :type="type" />
   </q-scroll-area>
   <CommonSideNav
@@ -21,21 +21,17 @@
 </template>
 
 <script setup>
-const app = useAppConfig();
-
-const idCnt = ref(0);
 const title = ref('입주자');
 const type = ref('residents');
 const data = ref([]);
 
-const items = await fetch(`http://localhost:5000/residents`, {
+const items = await fetch(`http://localhost:5000/${type.value}`, {
   method: 'GET',
 })
   .then(r => r.json())
   .catch(e => e.data);
 // console.log(this.$parent.currentTab);
 data.value = items;
-idCnt.value = items.length;
 
 // parameter랑 const 변수명 겹치면 이상하게 안됨.
 function handleData(d) {
@@ -65,7 +61,6 @@ const barStyle = {
   width: '9px',
   opacity: 0.2,
 };
-const currentTab = app.typeName;
 </script>
 
 <style scoped>
