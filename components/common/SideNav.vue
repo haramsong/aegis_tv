@@ -31,6 +31,7 @@ const getListItem = async index => {
   const type = app.data[index].type;
   emit('getTitle', app.data[index].title);
   emit('getType', type);
+  updateAppConfig({ type });
 
   const apiUrl = `http://localhost:5000/${type}`;
   try {

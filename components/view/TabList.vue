@@ -20,9 +20,15 @@
 </template>
 
 <script setup>
+const app = useAppConfig();
 const title = ref('입주자');
 const type = ref('residents');
 const data = ref([]);
+
+// Vuex의 store 기능과 비슷, 다른 컴포넌트에서 state 변경 시 watch안 함수 돎.
+watch(app, () => {
+  console.log(app.type);
+});
 
 const items = await fetch(`http://localhost:5000/${type.value}`, {
   method: 'GET',
