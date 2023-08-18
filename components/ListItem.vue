@@ -12,6 +12,7 @@
           path: `/details/${props.type}`,
           query: { id: item.id },
         }"
+        @click="updateCnt(item.id)"
       >
         <q-card-section>
           <div class="text-h6">{{ item.title }}</div>
@@ -29,6 +30,8 @@
 </template>
 
 <script setup>
+const router = useRouter();
+
 const props = defineProps({
   data: {
     type: Object,
@@ -39,6 +42,23 @@ const props = defineProps({
     required: true,
   },
 });
+
+const updateCnt = async id => {
+  try {
+    const cnt = parseInt(props.data[parseInt(id) - 1].cnt);
+    const body = JSON.stringify({
+      cnt: cnt + 1,
+    });
+    const response = await fetch(`http://localhost:5000/${props.type}/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+    }).then(r => r.json());
+    console.log(response);
+  } catch (e) {
+    console.log(e);
+  }
+};
 </script>
 
 <style lang="sass" scoped>
