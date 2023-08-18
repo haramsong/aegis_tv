@@ -3,6 +3,8 @@
     <q-page-sticky position="left">
       <div class="fit q-py-lg q-px-md column">
         <q-btn
+          v-for="(item, index) in app.data"
+          :key="item.type"
           round
           flat
           color="grey-9"
@@ -10,103 +12,44 @@
           no-caps
           size="24px"
           class="GPL__side-btn"
-          @click.prevent="getListItem"
+          @click.prevent="getListItem(index)"
         >
-          <q-icon size="24px" name="photo" />
-          <div class="GPL__side-btn__label">입주자</div>
-        </q-btn>
-
-        <q-btn
-          round
-          flat
-          color="grey-9"
-          stack
-          no-caps
-          size="24px"
-          class="GPL__side-btn"
-        >
-          <q-icon size="24px" name="collections_bookmark" />
-          <div class="GPL__side-btn__label">검침</div>
-        </q-btn>
-
-        <q-btn
-          round
-          flat
-          color="grey-9"
-          stack
-          no-caps
-          size="24px"
-          class="GPL__side-btn"
-        >
-          <q-icon size="24px" name="assistant" />
-          <div class="GPL__side-btn__label">부과</div>
-          <q-badge
-            floating
-            color="red-14"
-            text-color="white"
-            style="top: 8px; right: 16px"
-          >
-            1
-          </q-badge>
-        </q-btn>
-
-        <q-btn
-          round
-          flat
-          color="grey-9"
-          stack
-          no-caps
-          size="24px"
-          class="GPL__side-btn"
-        >
-          <q-icon size="24px" name="group" />
-          <div class="GPL__side-btn__label">수납</div>
-        </q-btn>
-
-        <q-btn
-          round
-          flat
-          color="grey-9"
-          stack
-          no-caps
-          size="24px"
-          class="GPL__side-btn"
-        >
-          <q-icon size="24px" name="import_contacts" />
-          <div class="GPL__side-btn__label">회계</div>
-        </q-btn>
-
-        <q-btn
-          round
-          flat
-          color="grey-9"
-          stack
-          no-caps
-          size="24px"
-          class="GPL__side-btn"
-        >
-          <q-icon size="24px" name="check_circle" />
-          <div class="GPL__side-btn__label">인사급여</div>
-        </q-btn>
-
-        <q-btn
-          round
-          flat
-          color="grey-9"
-          stack
-          no-caps
-          size="24px"
-          class="GPL__side-btn"
-        >
-          <q-icon size="24px" name="login" />
-          <div class="GPL__side-btn__label">기타</div>
+          <q-icon size="24px" :name="item.icon" />
+          <div class="GPL__side-btn__label">{{ item.title }}</div>
         </q-btn>
       </div>
     </q-page-sticky>
   </q-page-container>
 </template>
 
-<script setup></script>
+<script setup>
+const app = useAppConfig();
+
+const emit = defineEmits(['getData', 'getTitle', 'getType']);
+
+const getListItem = async index => {
+  const type = app.data[index].type;
+  emit('getTitle', app.data[index].title);
+  emit('getType', type);
+  // const list = fetch(`http://localhost:5000/${name}`, {
+  //   method: 'GET',
+  // })
+  //   .then(r => r.json())
+  //   .catch(e => e.data);
+  const apiUrl = `http://localhost:5000/${type}`;
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+    });
+    const data = await response.json();
+    emit('getData', data);
+
+    // 데이터를 업데이트하여 컴포넌트 리랜더링을 유발
+  } catch (error) {
+    console.error(error);
+  }
+};
+</script>
 
 <style lang="sass">
 .GPL

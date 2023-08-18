@@ -2,17 +2,9 @@
   <div class="q-pa-xl q-ma-xl">
     <q-form
       class="q-gutter-md q-pt-lg q-ma-xl"
-      @submit="onSubmit"
+      @submit="onSubmit()"
       @reset="onReset"
     >
-      <q-input
-        v-model="name"
-        filled
-        label="제목 *"
-        lazy-rules
-        :rules="[val => (val && val.length > 0) || '제목을 입력해주세요.']"
-      />
-
       <q-input
         v-model="createdBy"
         filled
@@ -21,7 +13,13 @@
         lazy-rules
         :rules="[val => (val && val.length > 0) || '작성자를 입력해주세요.']"
       />
-
+      <q-input
+        v-model="title"
+        filled
+        label="제목 *"
+        lazy-rules
+        :rules="[val => (val && val.length > 0) || '제목을 입력해주세요.']"
+      />
       <!-- <q-input
         v-model="age"
         filled
@@ -56,35 +54,63 @@
 
 <script setup>
 import { useQuasar } from 'quasar';
+import { format } from 'date-fns';
 
 const router = useRouter();
-
+const route = useRoute();
 const $q = useQuasar();
 
-const name = ref(null);
-const createdBy = ref('관리자');
+const today = new Date();
+
+const id = ref(route.query.id);
+const title = ref(null);
+const createdAt = ref(format(today, 'yyyy-MM-dd'));
+const createdBy = '관리자';
+const cnt = 0;
 const root = ref(null);
 
-function onSubmit() {
-  $q.notify({
-    color: 'green-4',
-    textColor: 'white',
-    icon: 'cloud_done',
-    message: 'Submitted',
-    actions: [
-      {
-        label: '확인',
-        color: 'white',
-        handler: () => {
-          router.push({ path: '/' });
+console.log();
+
+const onSubmit = async () => {
+  try {
+    const body = JSON.stringify({
+      id: parseInt(id.value),
+      title: title.value,
+      createdAt: createdAt.value,
+      createdBy,
+      cnt,
+      root: root.value,
+    });
+    console.log(body);
+    const response = await fetch(`http://localhost:5000/${route.params.type}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+    }).then(r => r.json());
+    console.log(response);
+  } catch (e) {
+    console.log(e);
+  } finally {
+    $q.notify({
+      color: 'green-4',
+      textColor: 'white',
+      icon: 'cloud_done',
+      message: 'Submitted',
+      actions: [
+        {
+          label: '확인',
+          color: 'white',
+          handler: () => {
+            router.push({ path: '/' });
+          },
         },
-      },
-    ],
-  });
-}
+      ],
+    });
+  }
+};
 
 function onReset() {
-  name.value = null;
+  title.value = null;
   root.value = null;
 }
 </script>
