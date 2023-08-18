@@ -1,17 +1,6 @@
 <template>
   <q-header elevated glossy class="bg-grey-10 text-grey-8" height-hint="64">
     <q-toolbar class="GPL__toolbar" style="height: 64px">
-      <!-- 상단 버튼 -->
-      <!-- <q-btn
-        flat
-        dense
-        round
-        aria-label="Menu"
-        icon="menu"
-        class="q-mx-md"
-        @click="toggleLeftDrawer"
-      /> -->
-
       <q-toolbar-title shrink class="row items-center no-wrap">
         <span class="q-ml-sm">
           <nuxt-link class="text-weight-bolder text-h5 text-white" to="/"
@@ -42,18 +31,6 @@
         </template>
       </q-input>
 
-      <!-- <q-btn
-        v-if="$q.screen.gt.xs"
-        flat
-        dense
-        no-wrap
-        color="primary"
-        icon="cloud_upload"
-        no-caps
-        label="Upload"
-        class="q-ml-sm q-px-md"
-      /> -->
-
       <q-space />
 
       <div class="q-gutter-sm row items-center no-wrap">
@@ -61,7 +38,6 @@
           <q-tooltip>설정</q-tooltip>
         </q-btn>
         <q-btn round dense flat color="white" icon="notifications">
-          <!-- <q-badge color="red" text-color="white" floating> 2 </q-badge> -->
           <q-tooltip>알림</q-tooltip>
         </q-btn>
         <q-btn round flat>

@@ -1,10 +1,6 @@
 <template>
   <div class="q-pa-xl q-ma-xl">
-    <q-form
-      class="q-gutter-md q-pt-lg q-ma-xl"
-      @submit="onSubmit()"
-      @reset="onReset"
-    >
+    <q-form class="q-gutter-md q-pt-lg q-ma-xl" @submit="onSubmit()">
       <q-input
         v-model="createdBy"
         filled
@@ -28,14 +24,7 @@
         :rules="[val => (val && val.length > 0) || '경로를 입력해주세요.']"
       />
       <div>
-        <q-btn label="등록" type="submit" color="primary" />
-        <q-btn
-          label="초기화"
-          type="reset"
-          color="primary"
-          flat
-          class="q-ml-sm"
-        />
+        <q-btn label="수정" type="submit" color="primary" />
       </div>
     </q-form>
   </div>
@@ -51,28 +40,37 @@ const $q = useQuasar();
 
 const today = new Date();
 
-const id = ref(route.query.id);
 const title = ref(null);
 const createdAt = ref(format(today, 'yyyy-MM-dd'));
 const createdBy = '관리자';
-const cnt = 0;
 const root = ref(null);
+
+onMounted(async () => {
+  const response = await fetch(
+    `http://localhost:5000/${route.params.type}/${route.query.id}`,
+    {
+      method: 'GET',
+    },
+  ).then(r => r.json());
+  title.value = response.title;
+  root.value = response.root;
+});
 
 const onSubmit = async () => {
   try {
     const body = JSON.stringify({
-      id: parseInt(id.value),
       title: title.value,
       createdAt: createdAt.value,
-      createdBy,
-      cnt,
       root: root.value,
     });
-    const response = await fetch(`http://localhost:5000/${route.params.type}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body,
-    }).then(r => r.json());
+    const response = await fetch(
+      `http://localhost:5000/${route.params.type}/${route.query.id}`,
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+      },
+    ).then(r => r.json());
     console.log(response);
   } catch (e) {
     console.log(e);
@@ -94,9 +92,4 @@ const onSubmit = async () => {
     });
   }
 };
-
-function onReset() {
-  title.value = null;
-  root.value = null;
-}
 </script>

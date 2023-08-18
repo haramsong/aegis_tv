@@ -31,11 +31,7 @@ const getListItem = async index => {
   const type = app.data[index].type;
   emit('getTitle', app.data[index].title);
   emit('getType', type);
-  // const list = fetch(`http://localhost:5000/${name}`, {
-  //   method: 'GET',
-  // })
-  //   .then(r => r.json())
-  //   .catch(e => e.data);
+
   const apiUrl = `http://localhost:5000/${type}`;
   try {
     const response = await fetch(apiUrl, {
@@ -43,8 +39,6 @@ const getListItem = async index => {
     });
     const data = await response.json();
     emit('getData', data);
-
-    // 데이터를 업데이트하여 컴포넌트 리랜더링을 유발
   } catch (error) {
     console.error(error);
   }

@@ -1,9 +1,6 @@
 <template>
   <q-page-container>
     <q-page fit class="q-my-md">
-      <!-- <div class="text-h4 text-weight-bolder text-grey-9 q-mb-md">
-        {{ title }}
-      </div> -->
       <div class="bg-grey-2 q-mb-lg line">
         <div
           class="text-grey-14 q-pb-lg q-ma-sm text-bold text-h5 align-center inline-block"
@@ -11,11 +8,7 @@
           {{ item.title }}
         </div>
         <div class="text-grey-14 q-ma-sm float-bottom">
-          <span
-            class="
-          "
-            >{{ item.createdBy }}</span
-          >
+          <span>{{ item.createdBy }}</span>
           <span class="relative float-right">{{ item.createdAt }}</span>
         </div>
       </div>
@@ -38,6 +31,10 @@
           class="float-right q-ma-md q-pa-md"
           label="수정하기"
           icon="update"
+          :to="{
+            path: `/edit/${route.params.type}`,
+            query: { id: parseInt(route.query.id) },
+          }"
         />
       </div>
       <q-dialog v-model="confirm" class="q-ma-lg" persistent>
@@ -54,15 +51,13 @@
         </q-card>
       </q-dialog>
       <q-dialog v-model="alert">
-        <q-card>
+        <q-card class="alert-modal">
           <q-card-section>
             <div class="text-h6">완료</div>
           </q-card-section>
-
-          <q-card-section class="q-pt-none"> 삭제되었습니다 </q-card-section>
-
+          <q-card-section class="q-pt-none">삭제되었습니다.</q-card-section>
           <q-card-actions align="right">
-            <q-btn flat label="OK" color="primary" @click="confirmDelete" />
+            <q-btn flat label="확인" color="primary" @click="confirmDelete" />
           </q-card-actions>
         </q-card>
       </q-dialog>
@@ -89,12 +84,12 @@ onMounted(async () => {
 });
 
 async function deleteItem() {
-  // const response = await fetch(
-  //   `http://localhost:5000/${route.params.type}/${route.query.id}`,
-  //   {
-  //     method: 'DELETE',
-  //   },
-  // ).then(r => r.json());
+  const response = await fetch(
+    `http://localhost:5000/${route.params.type}/${route.query.id}`,
+    {
+      method: 'DELETE',
+    },
+  ).then(r => r.json());
   confirm.value = false;
   alert.value = true;
 }
@@ -112,5 +107,8 @@ function confirmDelete() {
 }
 .content {
   height: 460px;
+}
+.alert-modal {
+  width: 300px;
 }
 </style>

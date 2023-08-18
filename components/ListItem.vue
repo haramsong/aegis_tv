@@ -29,9 +29,6 @@
 </template>
 
 <script setup>
-const app = useAppConfig();
-const listData = ref([]);
-
 const props = defineProps({
   data: {
     type: Object,
@@ -42,7 +39,6 @@ const props = defineProps({
     required: true,
   },
 });
-// console.log(this.$parent.currentTab);
 </script>
 
 <style lang="sass" scoped>

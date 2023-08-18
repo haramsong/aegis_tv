@@ -1,10 +1,9 @@
 <template>
   <q-scroll-area
     visible
-    class="q-mb-xl"
+    class="scroll-area q-mb-xl"
     :thumb-style="thumbStyle"
     :bar-style="barStyle"
-    style="margin-top: -20px; padding-left: 110px; width: 100%; height: 700px"
   >
     <div class="text-h4 text-weight-bolder text-grey-9 q-mb-md">
       {{ title }}
@@ -30,18 +29,15 @@ const items = await fetch(`http://localhost:5000/${type.value}`, {
 })
   .then(r => r.json())
   .catch(e => e.data);
-// console.log(this.$parent.currentTab);
 data.value = items;
 
 // parameter랑 const 변수명 겹치면 이상하게 안됨.
 function handleData(d) {
   data.value = d;
 }
-
 function handleTitle(t) {
   title.value = t;
 }
-
 function handleType(t) {
   type.value = t;
 }
@@ -53,7 +49,6 @@ const thumbStyle = {
   width: '5px',
   opacity: 0.75,
 };
-
 const barStyle = {
   right: '2px',
   borderRadius: '9px',
@@ -67,5 +62,11 @@ const barStyle = {
 .line {
   height: 5px;
   width: 90%;
+}
+.scroll-area {
+  margin-top: -20px;
+  padding-left: 110px;
+  width: 100%;
+  height: 700px;
 }
 </style>
