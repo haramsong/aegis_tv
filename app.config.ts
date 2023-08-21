@@ -38,4 +38,5 @@ export default defineAppConfig({
   ],
   typeName: '',
   searchKeyword: '',
+  loading: false,
 });

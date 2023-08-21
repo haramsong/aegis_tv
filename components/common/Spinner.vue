@@ -1,9 +1,17 @@
 <script setup>
 import { useQuasar } from 'quasar';
-import { onBeforeUnmount } from 'vue';
 
+const app = useAppConfig();
 const $q = useQuasar();
 let timer;
+
+watch(app, () => {
+  if (app.loading) {
+    $q.loading.show();
+  } else {
+    $q.loading.hide();
+  }
+});
 
 onBeforeUnmount(() => {
   if (timer !== void 0) {
@@ -11,14 +19,6 @@ onBeforeUnmount(() => {
     $q.loading.hide();
   }
 });
-
-function showLoading() {
-  $q.loading.show();
-}
-
-function hideLoading() {
-  $q.loading.hide();
-}
 </script>
 
 <style></style>

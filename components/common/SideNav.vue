@@ -29,6 +29,8 @@ const emit = defineEmits(['getData', 'getTitle', 'getType']);
 
 const getListItem = async index => {
   updateAppConfig({ searchKeyword: '' });
+  updateAppConfig({ loading: true });
+
   const type = app.data[index].type;
   emit('getTitle', app.data[index].title);
   emit('getType', type);
@@ -43,6 +45,8 @@ const getListItem = async index => {
     emit('getData', data);
   } catch (error) {
     console.error(error);
+  } finally {
+    updateAppConfig({ loading: false });
   }
 };
 </script>

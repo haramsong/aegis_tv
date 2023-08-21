@@ -40,7 +40,6 @@
 const app = useAppConfig();
 
 const listData = ref(props.data);
-
 const searchKey = ref('');
 
 const props = defineProps({
@@ -90,6 +89,8 @@ const checkRecentFlag = id => {
 };
 
 const updateCnt = async id => {
+  updateAppConfig({ loading: true });
+
   try {
     const cnt = parseInt(props.data[parseInt(id) - 1].cnt);
     const body = JSON.stringify({
@@ -104,6 +105,7 @@ const updateCnt = async id => {
   } catch (e) {
     console.log(e);
   }
+  updateAppConfig({ loading: false });
 };
 </script>
 

@@ -59,6 +59,8 @@ const cnt = 0;
 const root = ref(null);
 
 const onSubmit = async () => {
+  updateAppConfig({ loading: true });
+
   try {
     const body = JSON.stringify({
       id: parseInt(id.value),
@@ -77,6 +79,8 @@ const onSubmit = async () => {
   } catch (e) {
     console.log(e);
   } finally {
+    updateAppConfig({ loading: false });
+
     $q.notify({
       color: 'green-4',
       textColor: 'white',

@@ -57,6 +57,8 @@ onMounted(async () => {
 });
 
 const onSubmit = async () => {
+  updateAppConfig({ loading: true });
+
   try {
     const body = JSON.stringify({
       title: title.value,
@@ -75,6 +77,8 @@ const onSubmit = async () => {
   } catch (e) {
     console.log(e);
   } finally {
+    updateAppConfig({ loading: false });
+
     $q.notify({
       color: 'green-4',
       textColor: 'white',

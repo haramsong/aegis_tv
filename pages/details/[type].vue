@@ -66,6 +66,7 @@
 </template>
 
 <script setup>
+const app = useAppConfig();
 const router = useRouter();
 const route = useRoute();
 
@@ -74,6 +75,8 @@ const alert = ref(false);
 const confirm = ref(false);
 
 onMounted(async () => {
+  updateAppConfig({ loading: true });
+
   const response = await fetch(
     `http://localhost:5000/${route.params.type}/${route.query.id}`,
     {
@@ -81,6 +84,7 @@ onMounted(async () => {
     },
   ).then(r => r.json());
   item.value = response;
+  updateAppConfig({ loading: false });
 });
 
 async function deleteItem() {
