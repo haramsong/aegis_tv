@@ -5,6 +5,13 @@
       :key="item.id"
       class="q-ma-lg q-pa-md my-card"
     >
+      <span v-if="checkRecentFlag(item.id)">
+        <q-icon
+          size="59px"
+          class="absolute z-top text-red-14 bg-none text-h6"
+          name="fiber_new"
+        />
+      </span>
       <q-video :src="`https://www.youtube.com/embed/${item.root}`" />
       <nuxt-link
         style="text-decoration: none; color: inherit"
@@ -42,6 +49,24 @@ const props = defineProps({
     required: true,
   },
 });
+
+const checkRecentFlag = id => {
+  const splittedDate = props.data[parseInt(id) - 1].createdAt.split('-');
+  const date = splittedDate.join('/');
+
+  const today = new Date();
+  const dateObject = new Date(date);
+  const lastWeek = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate() - 7,
+  );
+  console.log(dateObject);
+  console.log(lastWeek);
+  console.log(lastWeek < dateObject && dateObject <= today);
+
+  return lastWeek < dateObject && dateObject <= today;
+};
 
 const updateCnt = async id => {
   try {
