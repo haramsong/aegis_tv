@@ -1,0 +1,80 @@
+<template>
+  <q-scroll-area
+    visible
+    class="scroll-area q-mb-xl"
+    :thumb-style="thumbStyle"
+    :bar-style="barStyle"
+  >
+    <div class="text-h4 text-weight-bolder text-grey-9 q-mb-md">
+      {{ title }}
+    </div>
+    <div class="bg-red-14 line"></div>
+    <ListItem :type="type" :data="data" />
+    <CommonFloatingButton :id-cnt="data.length" :type="type" />
+  </q-scroll-area>
+  <CommonSideNav
+    @get-data="handleData"
+    @get-title="handleTitle"
+    @get-type="handleType"
+  />
+</template>
+
+<script setup>
+const app = useAppConfig();
+const title = ref(app.tabTitle);
+const type = ref(app.typeName);
+const data = ref([]);
+
+onMounted(async () => {
+  const items = await fetch(`http://localhost:5000/${type.value}`, {
+    method: 'GET',
+  })
+    .then(r => r.json())
+    .catch(e => e.data);
+  data.value = items;
+});
+
+watch(app, async () => {
+  title.value = app.tabTitle;
+  type.value = app.typeName;
+});
+
+// parameter랑 const 변수명 겹치면 이상하게 안됨.
+function handleData(d) {
+  data.value = d;
+}
+function handleTitle(t) {
+  title.value = t;
+}
+function handleType(t) {
+  type.value = t;
+}
+
+const thumbStyle = {
+  right: '4px',
+  borderRadius: '5px',
+  backgroundColor: '#d50000',
+  width: '5px',
+  opacity: 0.75,
+};
+const barStyle = {
+  right: '2px',
+  borderRadius: '9px',
+  backgroundColor: '#d50000',
+  width: '9px',
+  opacity: 0.2,
+};
+</script>
+
+<style scoped>
+.line {
+  height: 5px;
+  width: 90%;
+}
+.scroll-area {
+  margin-top: -20px;
+  padding-left: 110px;
+  width: 100%;
+  height: 700px;
+}
+</style>

@@ -1,0 +1,43 @@
+{
+  "residents": [
+    {
+      "id": 1,
+      "title": "차량일괄등록",
+      "createdAt": "2023-04-14",
+      "createdBy": "관리자",
+      "cnt": 77,
+      "root": "PbwYi5-qMQw"
+    },
+    {
+      "id": 2,
+      "title": "외부방문불법차량관리",
+      "createdAt": "2023-04-14",
+      "createdBy": "관리자",
+      "cnt": 109,
+      "root": "y0JhjR0cqCE"
+    },
+    {
+      "id": 3,
+      "title": "입주등록 및 전출처리 순서_YouTube 온라인 교육",
+      "createdAt": "2023-08-18",
+      "createdBy": "관리자",
+      "cnt": 183,
+      "root": "x9duNSKqxlM"
+    }
+  ],
+  "inspects": [
+    {
+      "id": 1,
+      "title": "분리검침",
+      "createdAt": "2023-08-21",
+      "createdBy": "관리자",
+      "cnt": 3,
+      "root": "XwvUm-ndzFY"
+    }
+  ],
+  "payments": [],
+  "storages": [],
+  "accountings": [],
+  "payrolls": [],
+  "etcs": []
+}

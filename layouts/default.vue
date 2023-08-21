@@ -1,16 +1,10 @@
 <template>
-	<div class="layout">
-		<CommonSideNav />
-		<div class="content">
-			<CommonHeader />
-			<slot />
-			<CommonFooter />
-		</div>
-	</div>
+  <q-layout view="hHr Lpr fFr">
+    <div>
+      <CommonSpinner />
+      <CommonHeader />
+      <slot />
+      <CommonFooter />
+    </div>
+  </q-layout>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style></style>
