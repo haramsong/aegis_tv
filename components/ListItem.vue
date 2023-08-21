@@ -105,6 +105,7 @@ const updateCnt = async id => {
   } catch (e) {
     console.log(e);
   }
+  updateAppConfig({ searchKeyword: '' });
   updateAppConfig({ loading: false });
 };
 </script>

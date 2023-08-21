@@ -36,7 +36,9 @@ export default defineAppConfig({
       icon: 'more',
     },
   ],
-  typeName: '',
+  tabTitle: '입주자',
+  typeName: 'residents',
   searchKeyword: '',
   loading: false,
+  listData: [],
 });

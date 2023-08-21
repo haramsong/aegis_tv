@@ -20,16 +20,24 @@
 </template>
 
 <script setup>
-const title = ref('입주자');
-const type = ref('residents');
+const app = useAppConfig();
+const title = ref(app.tabTitle);
+const type = ref(app.typeName);
 const data = ref([]);
 
-const items = await fetch(`http://localhost:5000/${type.value}`, {
-  method: 'GET',
-})
-  .then(r => r.json())
-  .catch(e => e.data);
-data.value = items;
+onMounted(async () => {
+  const items = await fetch(`http://localhost:5000/${type.value}`, {
+    method: 'GET',
+  })
+    .then(r => r.json())
+    .catch(e => e.data);
+  data.value = items;
+});
+
+watch(app, async () => {
+  title.value = app.tabTitle;
+  type.value = app.typeName;
+});
 
 // parameter랑 const 변수명 겹치면 이상하게 안됨.
 function handleData(d) {

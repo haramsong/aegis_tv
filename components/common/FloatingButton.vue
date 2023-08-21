@@ -8,6 +8,7 @@
         path: `/write/${props.type}`,
         query: { id: parseInt(props.idCnt) + 1 },
       }"
+      @click="updateAppConfig({ searchKeyword: '' })"
     >
       <q-tooltip>글쓰기</q-tooltip>
     </q-btn>

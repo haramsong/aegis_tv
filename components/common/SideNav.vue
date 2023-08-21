@@ -31,6 +31,9 @@ const getListItem = async index => {
   updateAppConfig({ searchKeyword: '' });
   updateAppConfig({ loading: true });
 
+  updateAppConfig({ tabTitle: app.data[index].title });
+  updateAppConfig({ typeName: app.data[index].type });
+
   const type = app.data[index].type;
   emit('getTitle', app.data[index].title);
   emit('getType', type);
