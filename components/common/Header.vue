@@ -13,12 +13,13 @@
 
       <q-input
         v-if="$q.screen.gt.sm"
-        v-model="search"
+        v-model.trim="search"
         class="GPL__toolbar-input"
         dark
         dense
         standout
         placeholder="Search"
+        @keyup.enter="searchList"
       >
         <template #prepend>
           <q-icon v-if="search === ''" name="search" />
@@ -52,7 +53,19 @@
 </template>
 
 <script setup>
+const app = useAppConfig();
+
 const search = ref('');
+
+function searchList() {
+  updateAppConfig({ searchKeyword: search.value });
+}
+
+watch(app, () => {
+  if (app.searchKeyword == '') {
+    search.value = '';
+  }
+});
 </script>
 
 <style lang="sass" scoped>

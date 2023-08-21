@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md">
     <q-card
-      v-for="item in props.data.slice().reverse()"
+      v-for="item in listData.slice().reverse()"
       :key="item.id"
       class="q-ma-lg q-pa-md my-card"
     >
@@ -37,7 +37,11 @@
 </template>
 
 <script setup>
-const router = useRouter();
+const app = useAppConfig();
+
+const listData = ref(props.data);
+
+const searchKey = ref('');
 
 const props = defineProps({
   data: {
@@ -48,6 +52,26 @@ const props = defineProps({
     type: String,
     required: true,
   },
+});
+
+// Vuex의 store 기능과 비슷, 다른 컴포넌트에서 state 변경 시 watch안 함수 돎.
+watch(app, () => {
+  searchKey.value = app.searchKeyword;
+  if (app.searchKeyword != '') {
+    const searchedList = [];
+    listData.value.forEach(function (v, i) {
+      if (v.title.includes(searchKey.value)) {
+        searchedList.push(v);
+      }
+    });
+    listData.value = searchedList;
+  } else {
+    listData.value = props.data;
+  }
+});
+
+watch(props, () => {
+  listData.value = props.data;
 });
 
 const checkRecentFlag = id => {
@@ -61,9 +85,6 @@ const checkRecentFlag = id => {
     today.getMonth(),
     today.getDate() - 7,
   );
-  console.log(dateObject);
-  console.log(lastWeek);
-  console.log(lastWeek < dateObject && dateObject <= today);
 
   return lastWeek < dateObject && dateObject <= today;
 };

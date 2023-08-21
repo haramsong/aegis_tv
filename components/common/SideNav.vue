@@ -28,6 +28,7 @@ const app = useAppConfig();
 const emit = defineEmits(['getData', 'getTitle', 'getType']);
 
 const getListItem = async index => {
+  updateAppConfig({ searchKeyword: '' });
   const type = app.data[index].type;
   emit('getTitle', app.data[index].title);
   emit('getType', type);
