@@ -1,11 +1,16 @@
+<!-- 푸터 영역 -->
 <template>
   <q-footer elevated glossy class="bg-grey-5 footer" height-hint="64">
     <div class="row no-wrap">
+      <!-- AegisTV 부분 -->
       <q-toolbar class="col-5 text-weight-bolder text-h4 text-grey-9 footer">
         <q-space />
         <div>AegisTV</div>
       </q-toolbar>
+
       <q-space />
+
+      <!-- 사업자 정보 부분 -->
       <q-toolbar class="text-grey-9 footer">
         <div v-if="$q.screen.gt.xs" class="div-font">
           <div>
@@ -17,19 +22,19 @@
             제2008-서울금천-0412호
           </div>
           <div>대표이사 : 최병인</div>
+
           <br />
+
           <div>
-            <strong
-              >COPYRIGHT &copy; AEGIS ENTERPRISE ALL RIGHT RESERVED.</strong
-            >
+            <strong>
+              COPYRIGHT &copy; AEGIS ENTERPRISE ALL RIGHT RESERVED.
+            </strong>
           </div>
         </div>
       </q-toolbar>
     </div>
   </q-footer>
 </template>
-
-<script setup></script>
 
 <style scoped>
 .footer {

@@ -1,3 +1,4 @@
+<!-- 사이드 바 영역 -->
 <template>
   <q-page-container class="GPL__page-container">
     <q-page-sticky position="left">
@@ -14,7 +15,9 @@
           class="GPL__side-btn"
           @click.prevent="getListItem(index)"
         >
+          <!-- 버튼 아이콘 -->
           <q-icon size="24px" :name="item.icon" />
+          <!-- 버튼 제목 -->
           <div class="GPL__side-btn__label">{{ item.title }}</div>
         </q-btn>
       </div>
@@ -25,30 +28,41 @@
 <script setup>
 const app = useAppConfig();
 
+// emit 이벤트 정의, 상위 컴포넌트로 변수 전달
 const emit = defineEmits(['getData', 'getTitle', 'getType']);
 
+// 사이드 바 버튼 클릭 이벤트
 const getListItem = async index => {
-  updateAppConfig({ searchKeyword: '' });
+  // Spinner.vue 에서 watch trigger
   updateAppConfig({ loading: true });
 
-  updateAppConfig({ tabTitle: app.data[index].title });
-  updateAppConfig({ typeName: app.data[index].type });
+  // 사이드 바 탭 이동 시, 검색어 초기화
+  updateAppConfig({ searchKeyword: '' });
 
+  const title = app.data[index].title;
   const type = app.data[index].type;
-  emit('getTitle', app.data[index].title);
-  emit('getType', type);
-  updateAppConfig({ type });
 
+  // TabList.vue 에서 watch trigger
+  updateAppConfig({ tabTitle: title });
+  updateAppConfig({ typeName: type });
+
+  // TabList.vue 에서 getTitle, getType 속성 전달
+  emit('getTitle', title);
+  emit('getType', type);
+
+  // type에 따른 각각의 api 호출(GET)
   const apiUrl = `http://localhost:5000/${type}`;
   try {
     const response = await fetch(apiUrl, {
       method: 'GET',
     });
     const data = await response.json();
+    // TabList.vue 에서 getData 속성 전달
     emit('getData', data);
   } catch (error) {
     console.error(error);
   } finally {
+    // Spinner.vue 에서 watch trigger
     updateAppConfig({ loading: false });
   }
 };

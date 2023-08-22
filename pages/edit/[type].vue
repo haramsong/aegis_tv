@@ -1,6 +1,9 @@
+<!-- 수정 페이지 : /edit/[type]?id=[id] -->
 <template>
   <div class="q-pa-xl q-ma-xl">
-    <q-form class="q-gutter-md q-pt-lg q-ma-xl" @submit="onSubmit()">
+    <!-- 수정 form -->
+    <q-form class="q-gutter-md q-pt-lg q-ma-xl" @submit="onEdit()">
+      <!-- 작성 input -->
       <q-input
         v-model="createdBy"
         filled
@@ -9,6 +12,7 @@
         lazy-rules
         :rules="[val => (val && val.length > 0) || '작성자를 입력해주세요.']"
       />
+      <!-- 제목 input -->
       <q-input
         v-model="title"
         filled
@@ -16,6 +20,7 @@
         lazy-rules
         :rules="[val => (val && val.length > 0) || '제목을 입력해주세요.']"
       />
+      <!-- 경로 input -->
       <q-input
         v-model="root"
         filled
@@ -23,7 +28,9 @@
         lazy-rules
         :rules="[val => (val && val.length > 0) || '경로를 입력해주세요.']"
       />
+      <!-- button group -->
       <div>
+        <!-- 수정 button -->
         <q-btn label="수정" type="submit" color="primary" />
       </div>
     </q-form>
@@ -40,31 +47,45 @@ const $q = useQuasar();
 
 const today = new Date();
 
+// 수정할 data
 const title = ref(null);
 const createdAt = ref(format(today, 'yyyy-MM-dd'));
-const createdBy = '관리자';
 const root = ref(null);
 
+// 수정할 페이지 정보 호출
 onMounted(async () => {
+  // Spinner.vue 에서 watch trigger
+  updateAppConfig({ loading: true });
+
   const response = await fetch(
     `http://localhost:5000/${route.params.type}/${route.query.id}`,
     {
       method: 'GET',
     },
   ).then(r => r.json());
+
+  // 제목, 경로 input의 value를 채워줌
   title.value = response.title;
   root.value = response.root;
+
+  // Spinner.vue 에서 watch trigger
+  updateAppConfig({ loading: false });
 });
 
-const onSubmit = async () => {
+// 수정 이벤트
+const onEdit = async () => {
+  // Spinner.vue 에서 watch trigger
   updateAppConfig({ loading: true });
 
   try {
+    // 수정할 data
     const body = JSON.stringify({
       title: title.value,
       createdAt: createdAt.value,
       root: root.value,
     });
+
+    // PATCH api 호출
     const response = await fetch(
       `http://localhost:5000/${route.params.type}/${route.query.id}`,
       {
@@ -77,13 +98,15 @@ const onSubmit = async () => {
   } catch (e) {
     console.log(e);
   } finally {
+    // Spinner.vue 에서 watch trigger
     updateAppConfig({ loading: false });
 
+    // 확인 alarm
     $q.notify({
       color: 'green-4',
       textColor: 'white',
       icon: 'cloud_done',
-      message: 'Submitted',
+      message: '수정이 완료되었습니다.',
       actions: [
         {
           label: '확인',
