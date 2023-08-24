@@ -4,38 +4,40 @@
     <q-card
       v-for="item in listData.slice().reverse()"
       :key="item.id"
-      class="q-ma-lg q-pa-md my-card"
+      class="my-card q-ma-lg"
     >
       <!-- 신규 컨텐츠 flag -->
-      <span v-if="checkRecentFlag(item.id)">
+      <div v-if="checkRecentFlag(item.id)" class="q-mb-md">
         <q-icon
-          size="59px"
+          size="42px"
           class="absolute z-top text-red-14 bg-none text-h6"
           name="fiber_new"
         />
-      </span>
-      <!-- 영상 -->
-      <q-video :src="`https://www.youtube.com/embed/${item.root}`" />
-      <!-- 카드 영역 클릭 시, 상세 페이지 이동 -->
-      <nuxt-link
-        style="text-decoration: none; color: inherit"
-        :to="{
-          path: `/details/${props.type}`,
-          query: { id: item.id },
-        }"
-        @click="updateCnt(item.id)"
-      >
-        <!-- 제목, 작성자 -->
-        <q-card-section>
-          <div class="text-h6">{{ item.title }}</div>
-          <div class="text-subtitle2 text-bold">{{ item.createdBy }}</div>
-        </q-card-section>
-        <!-- 작성일, 조회수 -->
-        <q-card-section class="q-pt-none">
-          <span class="text-subtitle2 text-bold">{{ item.createdAt }}</span>
-          <span class="text-subtitle2 float-right">{{ item.cnt }}</span>
-        </q-card-section>
-      </nuxt-link>
+      </div>
+      <div class="q-pa-lg">
+        <!-- 영상 -->
+        <q-video :src="`https://www.youtube.com/embed/${item.root}`" />
+        <!-- 카드 영역 클릭 시, 상세 페이지 이동 -->
+        <nuxt-link
+          style="text-decoration: none; color: inherit"
+          :to="{
+            path: `/details/${props.type}`,
+            query: { id: item.id },
+          }"
+          @click="updateCnt(item.id)"
+        >
+          <!-- 제목, 작성자 -->
+          <q-card-section>
+            <div class="text-h6">{{ item.title }}</div>
+            <div class="text-subtitle2 text-bold">{{ item.createdBy }}</div>
+          </q-card-section>
+          <!-- 작성일, 조회수 -->
+          <q-card-section class="q-pt-none">
+            <span class="text-subtitle2 text-bold">{{ item.createdAt }}</span>
+            <span class="text-subtitle2 float-right">{{ item.cnt }}</span>
+          </q-card-section>
+        </nuxt-link>
+      </div>
     </q-card>
     <div class="q-pb-xl"></div>
   </div>
@@ -112,11 +114,14 @@ const updateCnt = async id => {
     const body = JSON.stringify({
       cnt: cnt + 1,
     });
-    const response = await fetch(`http://localhost:5000/${props.type}/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body,
-    }).then(r => r.json());
+    const response = await fetch(
+      `http://192.168.38.41:5000/${props.type}/${id}`,
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+      },
+    ).then(r => r.json());
     console.log(response);
   } catch (e) {
     console.log(e);
@@ -135,4 +140,7 @@ const updateCnt = async id => {
   max-width: 320px
   min-width: 320px
   display: inline-block
+
+.card
+  padding-top: 10px
 </style>
