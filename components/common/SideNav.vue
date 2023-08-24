@@ -12,11 +12,11 @@
           stack
           no-caps
           size="24px"
-          class="GPL__side-btn"
+          class="GPL__side-btn q-my-xs"
           @click.prevent="getListItem(index)"
         >
           <!-- 버튼 아이콘 -->
-          <q-icon size="24px" :name="item.icon" />
+          <q-icon size="34px" :name="item.icon" />
           <!-- 버튼 제목 -->
           <div class="GPL__side-btn__label">{{ item.title }}</div>
         </q-btn>
@@ -51,7 +51,7 @@ const getListItem = async index => {
   emit('getType', type);
 
   // type에 따른 각각의 api 호출(GET)
-  const apiUrl = `http://localhost:5000/${type}`;
+  const apiUrl = `http://192.168.38.41:5000/${type}`;
   try {
     const response = await fetch(apiUrl, {
       method: 'GET',
@@ -99,9 +99,9 @@ const getListItem = async index => {
   &__side-btn
     &__label
       font-size: 15px
-      line-height: 30px
+      line-height: 32px
       letter-spacing: .01785714em
-      font-weight: 600
+      font-weight: 700
 
   @media (min-width: 1024px)
     &__page-container

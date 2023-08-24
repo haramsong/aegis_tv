@@ -3,14 +3,16 @@
   <q-header elevated glossy class="bg-grey-10 text-grey-8" height-hint="64">
     <q-toolbar class="GPL__toolbar" style="height: 64px">
       <!-- 제목 영역 -->
-      <q-toolbar-title shrink class="row items-center no-wrap">
-        <span class="q-ml-sm">
+      <nuxt-link class="" to="/">
+        <q-toolbar-title shrink class="overflow-hidden-y row items-center wrap">
           <!-- 클릭 시, root 디렉토리로 이동 -->
-          <nuxt-link class="text-weight-bolder text-h5 text-white" to="/">
-            AegisTV
-          </nuxt-link>
-        </span>
-      </q-toolbar-title>
+          <img
+            src="@/public/img/logo.jpg"
+            style="overflow: hidden; height: 40px"
+            alt=""
+          />
+        </q-toolbar-title>
+      </nuxt-link>
 
       <q-space />
 
@@ -42,16 +44,16 @@
       <!-- 버튼 그룹(설정, 알림, 내 계정) -->
       <div class="q-gutter-sm row items-center no-wrap">
         <q-btn round dense flat color="white" icon="apps">
-          <q-tooltip>설정</q-tooltip>
+          <q-tooltip>설정&NewLine;(구현예정)</q-tooltip>
         </q-btn>
         <q-btn round dense flat color="white" icon="notifications">
-          <q-tooltip>알림</q-tooltip>
+          <q-tooltip>알림(구현예정)</q-tooltip>
         </q-btn>
         <q-btn round flat>
           <q-avatar size="26px">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+            <img src="@/public/thumbnail.png" />
           </q-avatar>
-          <q-tooltip>내 계정</q-tooltip>
+          <q-tooltip>내 계정(구현예정)</q-tooltip>
         </q-btn>
       </div>
     </q-toolbar>

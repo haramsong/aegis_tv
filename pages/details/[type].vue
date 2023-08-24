@@ -95,7 +95,7 @@ onMounted(async () => {
   updateAppConfig({ loading: true });
 
   const response = await fetch(
-    `http://localhost:5000/${route.params.type}/${route.query.id}`,
+    `http://192.168.38.41:5000/${route.params.type}/${route.query.id}`,
     {
       method: 'GET',
     },
@@ -112,7 +112,7 @@ onMounted(async () => {
 async function deleteItem() {
   // DELETE api 호출
   const response = await fetch(
-    `http://localhost:5000/${route.params.type}/${route.query.id}`,
+    `http://192.168.38.41:5000/${route.params.type}/${route.query.id}`,
     {
       method: 'DELETE',
     },

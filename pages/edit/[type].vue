@@ -58,7 +58,7 @@ onMounted(async () => {
   updateAppConfig({ loading: true });
 
   const response = await fetch(
-    `http://localhost:5000/${route.params.type}/${route.query.id}`,
+    `http://192.168.38.41:5000/${route.params.type}/${route.query.id}`,
     {
       method: 'GET',
     },
@@ -87,7 +87,7 @@ const onEdit = async () => {
 
     // PATCH api 호출
     const response = await fetch(
-      `http://localhost:5000/${route.params.type}/${route.query.id}`,
+      `http://192.168.38.41:5000/${route.params.type}/${route.query.id}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
