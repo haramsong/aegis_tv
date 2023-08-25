@@ -5,7 +5,6 @@
     <q-form class="q-gutter-md q-pt-lg q-ma-xl" @submit="onEdit()">
       <!-- 작성 input -->
       <q-input
-        v-model="createdBy"
         filled
         disable
         label="작성자 *"

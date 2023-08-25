@@ -9,7 +9,6 @@
     >
       <!-- 작성자 input -->
       <q-input
-        v-model="createdBy"
         filled
         disable
         label="작성자 *"
@@ -65,7 +64,6 @@ const title = ref(null);
 // 작성일 : 오늘
 const createdAt = ref(format(today, 'yyyy-MM-dd'));
 // 작성자 : 관리자 고정
-const createdBy = '관리자';
 // 조회수 : 신규 등록이니 조회수 0
 const cnt = 0;
 const root = ref(null);
@@ -81,7 +79,6 @@ const onSubmit = async () => {
       id: parseInt(id.value),
       title: title.value,
       createdAt: createdAt.value,
-      createdBy,
       cnt,
       root: root.value,
     });
