@@ -1,0 +1,351 @@
+{
+  "residents": [
+    {
+      "id": 1,
+      "title": "차량일괄등록",
+      "createdAt": "2023-04-14",
+      "createdBy": "관리자",
+      "cnt": 78,
+      "root": "PbwYi5-qMQw"
+    },
+    {
+      "id": 2,
+      "title": "외부방문불법차량관리",
+      "createdAt": "2023-04-14",
+      "createdBy": "관리자",
+      "cnt": 112,
+      "root": "y0JhjR0cqCE"
+    },
+    {
+      "id": 3,
+      "title": "입주등록 및 전출처리 순서 YouTube 온라인 교육",
+      "createdAt": "2023-08-22",
+      "createdBy": "관리자",
+      "cnt": 188,
+      "root": "x9duNSKqxlM"
+    },
+    {
+      "id": 4,
+      "title": "단지내 전입,전출처리",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "OQn1hwiYDvY"
+    },
+    {
+      "id": 5,
+      "title": "장기수선충당금",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "Hj1ZjG_u514"
+    },
+    {
+      "id": 6,
+      "title": "입주자 관리비예치금(선수관리비)",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "mVhUVYg61KY"
+    },
+    {
+      "id": 7,
+      "title": "소유주변동처리",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 3,
+      "root": "BWVUsj1reEg"
+    }
+  ],
+  "inspects": [
+    {
+      "id": 1,
+      "title": "분리검침",
+      "createdAt": "2023-08-21",
+      "createdBy": "관리자",
+      "cnt": 4,
+      "root": "XwvUm-ndzFY"
+    },
+    {
+      "id": 2,
+      "title": "모바일검침 어플",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "0z4PKCxveOk"
+    },
+    {
+      "id": 3,
+      "title": "수도검침 감면 설정",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "sYryVMwTqBM"
+    },
+    {
+      "id": 4,
+      "title": "수도 조견표 등록",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "wsIkcdRYMPM"
+    },
+    {
+      "id": 5,
+      "title": "전기검침 데이터업로드",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "pygtTCwQOCU"
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "title": "부과마감&출력의뢰 방법",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "LelFk45n-Uc"
+    },
+    {
+      "id": 2,
+      "title": "(신)주차비부과",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "XGIozNCC8FE"
+    },
+    {
+      "id": 3,
+      "title": "자동이체세대등록",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "3k4vtomxW88"
+    },
+    {
+      "id": 4,
+      "title": "부과내역서올리기",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "Q-mAGBZEHss"
+    },
+    {
+      "id": 5,
+      "title": "합산동호관리",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "6HakrJWfyNs"
+    },
+    {
+      "id": 6,
+      "title": "분리부과처리",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "B3iwFHMcM_0"
+    },
+    {
+      "id": 7,
+      "title": "관리비부과처리",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "pgw3SBq2dOA"
+    },
+    {
+      "id": 8,
+      "title": "회계금액집계",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "deufcNG7AZM"
+    },
+    {
+      "id": 9,
+      "title": "바우처할인",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "3sRiOLQbzPw"
+    },
+    {
+      "id": 10,
+      "title": "별도금액등록",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "S8MRQ1lC2kM"
+    }
+  ],
+  "storages": [
+    {
+      "id": 1,
+      "title": "연체료일할 중간정산시 연체료확인방법",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "Y6dlUlOn_t0"
+    },
+    {
+      "id": 2,
+      "title": "연체료일할 연체료수정 방법",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "Ozw1c7zfO1g"
+    },
+    {
+      "id": 3,
+      "title": "연체료일할 납기후 연체료 확인방법",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "yY8ACxuliUo"
+    },
+    {
+      "id": 4,
+      "title": "연체료일할 수납처리 방법",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "IGU-napMA5o"
+    },
+    {
+      "id": 5,
+      "title": "연체료일할설정 후 연체료 확인사항",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "AKZVI9Es6yU"
+    },
+    {
+      "id": 6,
+      "title": "연체료일할 1년후고정",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "ulhTFV8nAWQ"
+    },
+    {
+      "id": 7,
+      "title": "연체료일할 1년후연속",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "ARAmttF2Gak"
+    },
+    {
+      "id": 8,
+      "title": "연체료일할 1년후차액",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "hsdtDV5uUKk"
+    }
+  ],
+  "accountings": [
+    {
+      "id": 1,
+      "title": "수익사업 2023 1기 확정 부가세 세무신고 안내",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "TVqm2Rtqlqo"
+    },
+    {
+      "id": 2,
+      "title": "세입세출서",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "fBJ1HLkVNPI"
+    }
+  ],
+  "payrolls": [
+    {
+      "id": 1,
+      "title": "간이지급명세서",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "ARBPaoNIg4U"
+    },
+    {
+      "id": 2,
+      "title": "2022년 귀속 연말정산",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "jUyOZYXJFkU"
+    },
+    {
+      "id": 3,
+      "title": "전직장내역등록_2020",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "N35r1yauUKg"
+    },
+    {
+      "id": 4,
+      "title": "사업장변경처리",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "eCAkn9ddivk"
+    },
+    {
+      "id": 5,
+      "title": "연근로소득내역등록",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "GuIBEj1SSoc"
+    },
+    {
+      "id": 6,
+      "title": "2020 개인공제자료등록",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "efX7_R-mXMc"
+    },
+    {
+      "id": 7,
+      "title": "연말정산작업",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "VSsMuP4AV2I"
+    },
+    {
+      "id": 8,
+      "title": "의료비,기부금,월세액,연금 등",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "4ga3rgH3zpU"
+    },
+    {
+      "id": 9,
+      "title": "정산디스켓작성,징수환차/환급금",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "KuW0zU45wGA"
+    },
+    {
+      "id": 10,
+      "title": "연말정산 자주하는 질문",
+      "createdAt": "2023-08-24",
+      "createdBy": "관리자",
+      "cnt": 0,
+      "root": "lv1KQx5ntOk"
+    }
+  ],
+  "etcs": []
+}
