@@ -40,7 +40,7 @@ const data = ref([]);
 // 처음 페이지 도달 시, 제목에 맞는 리스트 api 호출
 onMounted(async () => {
   const items = await fetch(
-    `https://separate-prairie-haircut.glitch.me/${type.value}`,
+    `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${type.value}`,
     {
       method: 'GET',
     },

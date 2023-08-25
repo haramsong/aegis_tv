@@ -88,7 +88,7 @@ const onSubmit = async () => {
 
     // POST api 호출
     const response = await fetch(
-      `https://separate-prairie-haircut.glitch.me/${route.params.type}`,
+      `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${route.params.type}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

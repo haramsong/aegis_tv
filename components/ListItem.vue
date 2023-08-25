@@ -115,7 +115,7 @@ const updateCnt = async id => {
       cnt: cnt + 1,
     });
     const response = await fetch(
-      `https://separate-prairie-haircut.glitch.me/${props.type}/${id}`,
+      `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${props.type}/${id}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },

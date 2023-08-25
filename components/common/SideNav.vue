@@ -51,7 +51,7 @@ const getListItem = async index => {
   emit('getType', type);
 
   // type에 따른 각각의 api 호출(GET)
-  const apiUrl = `https://separate-prairie-haircut.glitch.me/${type}`;
+  const apiUrl = `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${type}`;
   try {
     const response = await fetch(apiUrl, {
       method: 'GET',

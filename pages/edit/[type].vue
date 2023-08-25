@@ -58,7 +58,7 @@ onMounted(async () => {
   updateAppConfig({ loading: true });
 
   const response = await fetch(
-    `https://separate-prairie-haircut.glitch.me/${route.params.type}/${route.query.id}`,
+    `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${route.params.type}/${route.query.id}`,
     {
       method: 'GET',
     },
@@ -87,7 +87,7 @@ const onEdit = async () => {
 
     // PATCH api 호출
     const response = await fetch(
-      `https://separate-prairie-haircut.glitch.me/${route.params.type}/${route.query.id}`,
+      `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${route.params.type}/${route.query.id}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
