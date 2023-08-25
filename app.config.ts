@@ -48,4 +48,13 @@ export default defineAppConfig({
   loading: false,
   // 검색 리스트
   listData: [],
+  vercelAnalytics: {
+    mode: 'auto',
+    debug: true,
+    beforeSend: event => {
+      if (event.url.includes('/private')) return null;
+
+      return event;
+    },
+  },
 });
