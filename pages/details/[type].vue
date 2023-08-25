@@ -95,7 +95,7 @@ onMounted(async () => {
   updateAppConfig({ loading: true });
 
   const response = await fetch(
-    `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${route.params.type}/${route.query.id}`,
+    `https://night-treasure-boron.glitch.me/${route.params.type}/${route.query.id}`,
     {
       method: 'GET',
     },
