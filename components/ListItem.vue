@@ -29,7 +29,7 @@
           <!-- 제목, 작성자 -->
           <q-card-section>
             <div class="text-h6">{{ item.title }}</div>
-            <div class="text-subtitle2 text-bold">{{ item.createdBy }}</div>
+            <div class="text-subtitle2 text-bold">관리자</div>
           </q-card-section>
           <!-- 작성일, 조회수 -->
           <q-card-section class="q-pt-none">

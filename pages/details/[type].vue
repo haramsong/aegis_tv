@@ -12,7 +12,7 @@
         </div>
         <div class="text-grey-14 q-ma-sm float-bottom">
           <!-- 작성자 -->
-          <span>{{ item.createdBy }}</span>
+          <span>관리자</span>
           <!-- 작성일 -->
           <span class="relative float-right">{{ item.createdAt }}</span>
         </div>
@@ -95,7 +95,7 @@ onMounted(async () => {
   updateAppConfig({ loading: true });
 
   const response = await fetch(
-    `http://192.168.38.41:5000/${route.params.type}/${route.query.id}`,
+    `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${route.params.type}/${route.query.id}`,
     {
       method: 'GET',
     },
@@ -112,7 +112,7 @@ onMounted(async () => {
 async function deleteItem() {
   // DELETE api 호출
   const response = await fetch(
-    `http://192.168.38.41:5000/${route.params.type}/${route.query.id}`,
+    `https://my-json-server.typicode.com/haramsong/aegis_tv_api/${route.params.type}/${route.query.id}`,
     {
       method: 'DELETE',
     },
