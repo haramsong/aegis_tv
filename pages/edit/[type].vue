@@ -57,7 +57,7 @@ onMounted(async () => {
   updateAppConfig({ loading: true });
 
   const response = await fetch(
-    `https://warm-valuable-gasosaurus.glitch.me/${route.params.type}/${route.query.id}`,
+    `https://rainbow-lateral-wormhole.glitch.me:5000/${route.params.type}/${route.query.id}`,
     {
       method: 'GET',
     },
@@ -86,7 +86,7 @@ const onEdit = async () => {
 
     // PATCH api 호출
     const response = await fetch(
-      `https://warm-valuable-gasosaurus.glitch.me/${route.params.type}/${route.query.id}`,
+      `https://rainbow-lateral-wormhole.glitch.me:5000/${route.params.type}/${route.query.id}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },

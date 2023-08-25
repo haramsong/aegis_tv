@@ -85,7 +85,7 @@ const onSubmit = async () => {
 
     // POST api 호출
     const response = await fetch(
-      `https://warm-valuable-gasosaurus.glitch.me/${route.params.type}`,
+      `https://rainbow-lateral-wormhole.glitch.me:5000/${route.params.type}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
