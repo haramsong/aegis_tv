@@ -85,7 +85,7 @@ const onSubmit = async () => {
 
     // POST api 호출
     const response = await fetch(
-      `https://night-treasure-boron.glitch.me:5000/${route.params.type}`,
+      `https://night-treasure-boron.glitch.me/${route.params.type}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
