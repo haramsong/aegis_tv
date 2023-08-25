@@ -115,7 +115,7 @@ const updateCnt = async id => {
       cnt: cnt + 1,
     });
     const response = await fetch(
-      `https://rainbow-lateral-wormhole.glitch.me:5000/${props.type}/${id}`,
+      `https://night-treasure-boron.glitch.me:5000/${props.type}/${id}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },

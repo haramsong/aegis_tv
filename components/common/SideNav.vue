@@ -51,7 +51,7 @@ const getListItem = async index => {
   emit('getType', type);
 
   // type에 따른 각각의 api 호출(GET)
-  const apiUrl = `https://rainbow-lateral-wormhole.glitch.me:5000/${type}`;
+  const apiUrl = `https://night-treasure-boron.glitch.me:5000/${type}`;
   try {
     const response = await fetch(apiUrl, {
       method: 'GET',
