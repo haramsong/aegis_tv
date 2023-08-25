@@ -51,7 +51,7 @@ const getListItem = async index => {
   emit('getType', type);
 
   // type에 따른 각각의 api 호출(GET)
-  const apiUrl = `http://192.168.38.41:5000/${type}`;
+  const apiUrl = `https://separate-prairie-haircut.glitch.me/${type}`;
   try {
     const response = await fetch(apiUrl, {
       method: 'GET',
