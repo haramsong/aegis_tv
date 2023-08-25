@@ -10,5 +10,6 @@
       <!-- 푸터 -> /common/Footer.vue -->
       <CommonFooter />
     </div>
+    <Analytics />
   </q-layout>
 </template>
