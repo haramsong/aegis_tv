@@ -115,7 +115,7 @@ const updateCnt = async id => {
       cnt: cnt + 1,
     });
     const response = await fetch(
-      `http://192.168.38.41:5000/${props.type}/${id}`,
+      `https://warm-valuable-gasosaurus.glitch.me/${props.type}/${id}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
