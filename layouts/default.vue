@@ -10,6 +10,9 @@
       <!-- 푸터 -> /common/Footer.vue -->
       <CommonFooter />
     </div>
-    <Analytics />
   </q-layout>
 </template>
+
+<script>
+import { AnalyticsProps } from '@vercel/analytics/*';
+</script>
